@@ -20,7 +20,7 @@ network:
       addresses:
         - ${GW_IP}/${LAN_CIDR}
       nameservers:
-        addresses:[127.0.0.1, ${UPSTREAM_DNS}]
+        addresses: [127.0.0.1, ${UPSTREAM_DNS}]
         search: [${DOMAIN}]
 EOF
 chmod 600 /etc/netplan/01-gateway.yaml
