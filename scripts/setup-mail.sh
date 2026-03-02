@@ -7,13 +7,13 @@ setup_base_utils
 set_hostname_and_hosts "mail" "$MAIL_IP"
 apply_netplan_static "$MAIL_IP"
 
-log "Скачивание iRedMail 1.7.5..."
+log "Скачивание iRedMail 1.7.4..."
 cd /root
-if [ ! -f 1.7.5.tar.gz ]; then
-    wget -q https://github.com/iredmail/iRedMail/archive/refs/tags/1.7.5.tar.gz
-    tar xvf 1.7.5.tar.gz
+if [ ! -f 1.7.4.tar.gz ]; then
+    wget -q https://github.com/iredmail/iRedMail/archive/refs/tags/1.7.4.tar.gz
+    tar xvf 1.7.4.tar.gz
 fi
-cd iRedMail-1.7.5
+cd iRedMail-1.7.4
 
 log "Автоматизация установки iRedMail..."
 # Создаем файл ответов для автоматической установки без GUI
