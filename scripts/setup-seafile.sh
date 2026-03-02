@@ -17,7 +17,7 @@ mysql -u root -e "UPDATE mysql.user SET Password=PASSWORD('root') WHERE User='ro
 log "Установка Seafile Server..."
 mkdir -p /opt/seafile
 cd /opt/seafile
-if[ ! -f seafile-server_9.0.9_x86-64.tar.gz ]; then
+if [ ! -f seafile-server_9.0.9_x86-64.tar.gz ]; then
     wget -q https://s3.eu-central-1.amazonaws.com/download.seadrive.org/seafile-server_9.0.9_x86-64.tar.gz
     tar -xzf seafile-server_9.0.9_x86-64.tar.gz
 fi

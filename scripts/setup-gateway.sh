@@ -76,7 +76,7 @@ zone "${VARIANT}.168.192.in-addr.arpa" IN {
 EOF
 
 # Инициализация файлов зон
-if[ ! -f /var/lib/bind/forward.db ]; then
+if [ ! -f /var/lib/bind/forward.db ]; then
 cat <<EOF > /var/lib/bind/forward.db
 \$TTL 86400
 ${DOMAIN}. IN SOA gateway.${DOMAIN}. admin.${DOMAIN}. (
@@ -92,7 +92,7 @@ privatebin IN A ${PBIN_IP}
 EOF
 fi
 
-if[ ! -f /var/lib/bind/reverse.db ]; then
+if [ ! -f /var/lib/bind/reverse.db ]; then
 cat <<EOF > /var/lib/bind/reverse.db
 \$TTL 86400
 ${VARIANT}.168.192.in-addr.arpa. IN SOA gateway.${DOMAIN}. admin.${DOMAIN}. (

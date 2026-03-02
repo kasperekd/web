@@ -2,7 +2,7 @@
 # scripts/common.sh
 
 CONFIG_FILE="/opt/web/configs/lab-config.conf"
-if[ -f "$CONFIG_FILE" ]; then
+if [ -f "$CONFIG_FILE" ]; then
     source "$CONFIG_FILE"
 else
     echo "ОШИБКА: Файл конфигурации не найден ($CONFIG_FILE)"

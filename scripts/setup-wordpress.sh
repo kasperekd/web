@@ -19,7 +19,7 @@ mysql -u root -e "FLUSH PRIVILEGES;"
 
 log "Загрузка и конфигурация WordPress..."
 cd /tmp
-if[ ! -f latest-ru_RU.tar.gz ]; then
+if [ ! -f latest-ru_RU.tar.gz ]; then
     wget -q https://ru.wordpress.org/latest-ru_RU.tar.gz
     tar xzvf latest-ru_RU.tar.gz
 fi

@@ -5,10 +5,10 @@ ROLE="test-debug"
 
 # 1. Проверка наличия папок
 echo "--- ПРОВЕРКА ПУТЕЙ ---"
-[ -d "/opt/lab-setup" ] && echo "[OK] Директория /opt/lab-setup существует" || echo "[!!] Директория /opt/lab-setup НЕ НАЙДЕНА"
+[ -d "/opt/web" ] && echo "[OK] Директория /opt/web существует" || echo "[!!] Директория /opt/web НЕ НАЙДЕНА"
 
 # 2. Пытаемся подключить common.sh по абсолютному пути
-COMMON_PATH="/opt/lab-setup/scripts/common.sh"
+COMMON_PATH="/opt/web/scripts/common.sh"
 
 if [ -f "$COMMON_PATH" ]; then
     echo "[OK] Файл common.sh найден по пути $COMMON_PATH"
