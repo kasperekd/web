@@ -33,9 +33,12 @@ echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 sysctl -p
 
 apt-get install -y -qq iptables-persistent
+iptables -F
+iptables -X
 iptables -t nat -F
+iptables -t nat -X
 iptables -t nat -A POSTROUTING -o $WAN_IFACE -j MASQUERADE
-iptables -A FORWARD -i $WAN_IFACE -o $LAN_IFACE -j REJECT
+iptables -A FORWARD -i $WAN_IFACE -o $WAN_IFACE -j REJECT
 iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 # Перенаправление DNS-запросов (из ЛР 4)
 # iptables -t nat -A PREROUTING -i $LAN_IFACE -p tcp --dport 53 -j DNAT --to-destination ${UPSTREAM_DNS}:53
