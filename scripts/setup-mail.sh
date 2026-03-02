@@ -7,6 +7,11 @@ setup_base_utils
 set_hostname_and_hosts "mail" "$MAIL_IP"
 apply_netplan_static "$MAIL_IP"
 
+cat <<EOF > /etc/hosts
+127.0.0.1 localhost
+${MAIL_IP} mail.${DOMAIN} mail
+EOF
+
 log "Скачивание iRedMail 1.7.4..."
 cd /root
 if [ ! -f 1.7.4.tar.gz ]; then
