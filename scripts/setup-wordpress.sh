@@ -1,6 +1,6 @@
 #!/bin/bash
 ROLE="wordpress"
-source /opt/lab-setup/scripts/common.sh
+source /opt/web/scripts/common.sh
 
 log "--- Настройка WordPress (LAMP) ---"
 setup_base_utils

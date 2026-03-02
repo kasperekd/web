@@ -1,6 +1,6 @@
 #!/bin/bash
 ROLE="gateway"
-source /opt/lab-setup/scripts/common.sh
+source /opt/web/scripts/common.sh
 
 log "--- Настройка Gateway (NAT, DNS, DHCP) ---"
 setup_base_utils

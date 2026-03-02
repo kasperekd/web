@@ -1,6 +1,6 @@
 #!/bin/bash
 ROLE="seafile"
-source /opt/lab-setup/scripts/common.sh
+source /opt/web/scripts/common.sh
 
 log "--- Настройка Seafile ---"
 setup_base_utils

@@ -1,6 +1,6 @@
 #!/bin/bash
 ROLE="mail"
-source /opt/lab-setup/scripts/common.sh
+source /opt/web/scripts/common.sh
 
 log "--- Настройка iRedMail ---"
 setup_base_utils

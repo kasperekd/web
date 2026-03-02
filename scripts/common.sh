@@ -1,7 +1,7 @@
 #!/bin/bash
 # scripts/common.sh
 
-CONFIG_FILE="/opt/lab-setup/configs/lab-config.conf"
+CONFIG_FILE="/opt/web/configs/lab-config.conf"
 if[ -f "$CONFIG_FILE" ]; then
     source "$CONFIG_FILE"
 else

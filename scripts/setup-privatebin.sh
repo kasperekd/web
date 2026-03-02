@@ -1,6 +1,6 @@
 #!/bin/bash
 ROLE="privatebin"
-source /opt/lab-setup/scripts/common.sh
+source /opt/web/scripts/common.sh
 
 log "--- Настройка PrivateBin ---"
 setup_base_utils
