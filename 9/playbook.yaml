@@ -1,0 +1,25 @@
+---
+- name: Collect data from clients
+  hosts: clients
+  tasks:
+    - name: Create target directory on server
+      delegate_to: localhost
+      run_once: true
+      file:
+        path: "/etc/ansible/IT Planet"
+        state: directory
+        mode: '0777'
+
+    - name: Get free disk space using shell
+      shell: "df -h / | awk 'NR==2 {print $4}'"
+      register: disk_info
+
+    - name: Save info to file on server
+      delegate_to: localhost
+      copy:
+        dest: "/etc/ansible/IT Planet/{{ ansible_hostname }}.txt"
+        content: |
+          Client name: {{ ansible_hostname }}
+          IP address: {{ ansible_all_ipv4_addresses | select('match', '^172\.') | list | first | default(ansible_default_ipv4.address) }}
+          OS version: {{ ansible_distribution }} {{ ansible_distribution_version }}
+          Free space on disk: {{ disk_info.stdout }}

@@ -1,0 +1,5 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y ansible openssh-client sshpass nano iputils-ping
+RUN ssh-keygen -t rsa -N "" -f /root/.ssh/id_rsa
+CMD ["tail", "-f", "/dev/null"]
