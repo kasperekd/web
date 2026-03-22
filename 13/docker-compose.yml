@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  marvel_lab:
+    build: .
+    container_name: lab13_marvel
+    restart: unless-stopped
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared_tunnel
+    restart: always
+    command: tunnel run --token !!!!!!!
